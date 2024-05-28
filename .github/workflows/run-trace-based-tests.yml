@@ -17,7 +17,7 @@ jobs:
       - name: Configure Tracetest CLI
         uses: kubeshop/tracetest-github-action@v1
         with:
-          token: ${secrets.TRACETEST_CLI_TOKEN}
+          token: "${secrets.TRACETEST_CLI_TOKEN}"
 
       - name: Inject secrets as a variable set on Tracetest
         run: |
