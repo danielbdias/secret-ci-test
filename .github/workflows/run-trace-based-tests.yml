@@ -8,6 +8,9 @@ on:
   # allows run manually via Actions tab on Github
   workflow_dispatch:
 
+env:
+  TRACETEST_API_KEY: ${{secrets.TRACETEST_API_KEY}}
+
 jobs:
   pokeshop-trace-based-tests:
     name: Run trace based tests for Pokeshop
