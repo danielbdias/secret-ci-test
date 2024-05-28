@@ -44,6 +44,11 @@ jobs:
 
           tracetest apply variableset --file ./vars.yaml
 
+      - name: Run APIs locally with docker compose
+        run: |
+          docker-compose up -d
+          docker compose logs -f > /tmp/docker-log &
+
       - name: Run trace-based tests
         run: |
           tracetest run test --vars tracetesting-vars --file ./test-with-success.yaml
