@@ -1,7 +1,11 @@
 name: Run trace-based tests
 
 on:
-  # allows the manual trigger
+  # runs on every push to main
+  push:
+    branches: [main]
+
+  # allows run manually via Actions tab on Github
   workflow_dispatch:
 
 jobs:
