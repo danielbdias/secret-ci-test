@@ -12,8 +12,8 @@ env:
   TRACETEST_API_KEY: ${{secrets.TRACETEST_API_KEY}}
 
 jobs:
-  pokeshop-trace-based-tests:
-    name: Run trace based tests for Pokeshop
+  run-trace-based-tests:
+    name: Run trace based tests for Payment Ecosystem
     runs-on: ubuntu-latest
 
     steps:
