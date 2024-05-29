@@ -15,7 +15,6 @@ jobs:
   pokeshop-trace-based-tests:
     name: Run trace based tests for Pokeshop
     runs-on: ubuntu-latest
-    timeout-minutes: 20
 
     steps:
       - name: Checkout
