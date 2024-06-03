@@ -22,7 +22,7 @@ spec:
           username: ${var:USER}
           password: ${var:PASSWORD}
   specs:
-  - name: Your-API is OK
+  - name: Gateway-API is OK
     selector: span[name="POST /executePaymentOrder" http.target="/executePaymentOrder" http.method="POST"]
     assertions:
     - attr:http.status_code = 200

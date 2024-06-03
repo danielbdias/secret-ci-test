@@ -15,6 +15,7 @@ jobs:
   run-trace-based-tests:
     name: Run trace based tests for Payment Ecosystem
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout
