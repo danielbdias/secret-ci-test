@@ -25,14 +25,14 @@ jobs:
         with:
           token: ${{secrets.TRACETEST_CLI_TOKEN}}
 
-      - name: Configure Tracing Backend
-        run: |
-          tracetest datastore apply --file ./tracing-backend.yaml
-
       - name: Run APIs locally with docker compose
         run: |
           docker-compose up -d
           docker compose logs -f > /tmp/docker-log &
+
+      - name: Configure Tracing Backend
+        run: |
+          tracetest datastore apply --file ./tracing-backend.yaml
 
       - name: Inject secrets as a variable set on Tracetest
         run: |
