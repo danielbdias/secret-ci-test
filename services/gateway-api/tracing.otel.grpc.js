@@ -6,7 +6,12 @@ const config = require("./config")
 
 const sdk = new opentelemetry.NodeSDK({
   traceExporter: new OTLPTraceExporter({ url: config.otelExporterGrpcUrl }),
-  instrumentations: [getNodeAutoInstrumentations()],
+  instrumentations: [getNodeAutoInstrumentations({
+    // load custom configuration for http instrumentation
+    '@opentelemetry/instrumentation-fs': {
+      enabled: false
+    },
+  })],
   serviceName: config.otelServiceName
 })
 
